@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="card mt-5 d-flex justify-content-center align-items-center" style="max-width: 30%;">
+  <div class="card-header">{{customer_record}}</div>
+  <div class="card-body">
+    <p><span class="fw-bold text-dark">Email : </span>{{ customer_record.email }}</p>
+    <p><span class="fw-bold text-dark">Phone : </span>{{ customer_record.phone }}</p>
+    <p><span class="fw-bold text-dark">Address : </span>{{ customer_record.address }}</p>
+    <p><span class="fw-bold text-dark">City : </span>{{ customer_record.city }}</p>
+    <p><span class="fw-bold text-dark">State : </span>{{ customer_record.state }}</p>
+    <p><span class="fw-bold text-dark">Zipcode : </span>{{ customer_record.zipcode }}</p>
+    <p><span class="fw-bold text-dark">Created At : </span>{{ customer_record.created_at }}</p>
+    <p><span class="fw-bold text-dark">Id : </span>{{ customer_record.id }}</p>
+  </div>
+</div>
+
+<a href="{% url "home" %}" class="text-decoration-none btn btn-secondary mt-3">Back</a>
+<a href="{% url "update_record" customer_record.id %}" class="text-decoration-none btn btn-secondary mt-3">Update</a>
+<a href="{% url "delete_record" customer_record.id %}" class="text-decoration-none btn btn-danger mt-3">Delete</a>
+{% endblock %}
